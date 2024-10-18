@@ -1,6 +1,10 @@
-## paper-plotters
+# paper-plotters
 
-# Run examples
+## Run examples
 ```bash
-cargo run --example normal_distribution
+cargo run --release --example normal_distribution_png
+```
+
+```bash
+cargo run --release --example normal_distribution_svg
 ```
