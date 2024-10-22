@@ -1,6 +1,6 @@
 # paper-plotters
 
-![matrix visualization](examples/assets/matrix.png?raw=true)
+![matrix visualization](examples/assets/3d-plot2.gif?raw=true)
 
 ## Run examples
 ```bash
