@@ -5,7 +5,7 @@ use rand::SeedableRng;
 use rand_distr::{Distribution, Normal};
 use rand_xorshift::XorShiftRng;
 
-const OUT_FILE_NAME: &str = "plotters-doc-data/area-chart.png";
+const OUT_FILE_NAME: &str = "plotters-doc-data/number_of_transactions.png";
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let data: Vec<_> = {
         let norm_dist = Normal::new(500.0, 100.0).unwrap();
@@ -24,7 +24,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     while io::stdin().read_line(&mut input)? != 0 {
         if input.trim().is_empty() { break };
         let input_split = input.trim().split(",").collect::<Vec<&str>>();
-        parsed_f64.push(input_split[3].parse::<f64>()?);
+        parsed_f64.push(input_split[1].parse::<f64>()?);
         input.clear();
     };
 
@@ -35,8 +35,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut chart = ChartBuilder::on(&root)
         .set_label_area_size(LabelAreaPosition::Left, 60)
         .set_label_area_size(LabelAreaPosition::Bottom, 60)
-        .caption("Average Price (price_sum / number_of_transactions)", ("sans-serif", 40))
-        .build_cartesian_2d(0..(parsed_f64.len() - 1), 0.8..1.4)?;
+        .caption("Number_of_transactions)", ("sans-serif", 40))
+        .build_cartesian_2d(0..(parsed_f64.len() - 1), 0.0..1000.0)?;
 
     chart
         .configure_mesh()

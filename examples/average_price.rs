@@ -5,7 +5,7 @@ use rand::SeedableRng;
 use rand_distr::{Distribution, Normal};
 use rand_xorshift::XorShiftRng;
 
-const OUT_FILE_NAME: &str = "plotters-doc-data/area-chart.png";
+const OUT_FILE_NAME: &str = "plotters-doc-data/average_price.png";
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let data: Vec<_> = {
         let norm_dist = Normal::new(500.0, 100.0).unwrap();
